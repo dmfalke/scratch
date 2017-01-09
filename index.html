@@ -65,7 +65,6 @@
       .then(([_, {Task}]) => {
         new Task(_.partial(setTimeout, _, 1000, "Hello!")).run(console.log)
       })
-      .catch(error => { throw error })
     </script>
   </body>
 </html>
