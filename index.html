@@ -58,13 +58,8 @@
 
       System.import("test").then(test => console.log(test.name));
 
-      Promise.all([
-        System.import('lodash/partial'),
-        System.import('./Task.ts')
-      ])
-      .then(([partial, {Task}]) => {
-        new Task(partial(setTimeout, partial.placeholder, 1000, "Hello!")).run(console.log)
-      })
+      System.import('./Task.ts')
+      .then(({Task}) => new Task(res => setTimeout(res, 1000, "Hello!")).run(console.log))
     </script>
   </body>
 </html>
