@@ -36,6 +36,7 @@ SystemJS.config({
 
 // app config
 SystemJS.config({
+  defaultJSExtensions: true,
   map: {
     'lodash': 'https://unpkg.com/lodash@4.17.4',
   },

@@ -23,7 +23,6 @@ var packages = [
 }), {})
 
 System.config({
-  defaultJSExtensions: true,
   map: {
     folktale: 'https://raw.githubusercontent.com/origamitower/folktale/master/src'
   },
