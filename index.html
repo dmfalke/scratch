@@ -43,8 +43,8 @@
 
       // app config
       SystemJS.config({
-        map: {
-          lodash: 'https://unpkg.com/lodash@4.17.4',
+        paths: {
+          'lodash/*': 'https://unpkg.com/lodash/*',
         },
       });
 
@@ -59,11 +59,11 @@
       System.import("test").then(test => console.log(test.name));
 
       Promise.all([
-        System.import('lodash'),
+        System.import('lodash/partial'),
         System.import('./Task.ts')
       ])
-      .then(([_, {Task}]) => {
-        new Task(_.partial(setTimeout, _, 1000, "Hello!")).run(console.log)
+      .then(([partial, {Task}]) => {
+        new Task(partial(setTimeout, _, 1000, "Hello!")).run(console.log)
       })
     </script>
   </body>
